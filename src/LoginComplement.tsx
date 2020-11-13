@@ -1,19 +1,29 @@
 import React, {useEffect, useState} from "react";
 import MyForm from './MyForm';
 
-const LoginComplement = () =>{
+//import LoginComplement from "./LoginComplement";
 
 
-    return (
-        <div>
-
-            <p style={{color:"red"}}>님 환영합니다. </p>
+const LoginComplement = () => {
+    const onSubmit = (form: { name: string; description: string; password: boolean}) => {
 
 
+        document.write(form.name + '님 환영합니다.');
 
-        </div>
+        console.log(form)
 
-    );
+        /*
+
+        document.write(form.name + '님 환영합니다.')
+        <LoginComplement />
+
+        */
+
+    };
+
+
+    return <div>환영합니다. </div>;
+
 };
 
 export default LoginComplement;

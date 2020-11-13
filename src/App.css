@@ -1,15 +1,29 @@
 * {
 
-  margin: 20px;
+  margin: 10px;
   text-align: center;
 }
 
-span{
+h1{
   text-align: left;
 }
+span{
+  text-align: right;
+  display: inline-block;
+  width: 100px;
+}
+div{
+  text-align: left;
+  margin: 2px;
+
+}
 input{
-  background-color: antiquewhite;
-  margin: 10px;
+  background-color: lavender;
+  margin: 10px 1px;
+}
+
+button{
+  background-color: lavender;
 }
 /*
 
