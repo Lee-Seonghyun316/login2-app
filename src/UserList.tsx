@@ -10,7 +10,7 @@ const UserList = () =>{
 
 
     useEffect( () => {
-        if(confirmPassword !== "1234") {
+        if(confirmPassword == "1234" && password !=="") {
             setPasswordOK(true);
         }
         else {
@@ -29,6 +29,28 @@ const UserList = () =>{
         setConfirmPassword(e.target.value);
     };
 
+    const [value, setValue] = useState(0);
+
+
+
+    /*
+        const onInsert = (e:any) => {
+            const nextList = list.concat(parseInt(number));
+            setList(nextList);
+            setNumber(“);
+        };
+
+
+        <button onClick={onInsert}>로그인</button>
+
+
+        componentDidUpdate(prevProps, prevState) {
+    if (prevProps.value != = this.props.value) {
+      doSomething();
+    }
+    }
+
+    */
     return (
         <div>
             <input
@@ -46,7 +68,11 @@ const UserList = () =>{
                 onChange = {confirmPasswordChange}
             />
 
-            {passwordOK && <p style={{color:"red"}}>비밀번호가 다릅니다. </p>}
+            <button onClick={() => setValue(value + 1)}>+1</button>
+            <button onClick={() => setValue(value + 1)}>+1</button>
+            {passwordOK && <p style={{color:"red"}}>{password}님 환영합니다. </p>}
+
+
 
         </div>
 
