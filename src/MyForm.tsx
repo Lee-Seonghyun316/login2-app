@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react';
-
+import './App.css';
 type MyFormProps = {
     onSubmit: (form: { name: string; description: string; password:boolean}) => void;
 };
@@ -84,8 +84,13 @@ function MyForm({ onSubmit }: MyFormProps) {
 
     return (
         <form onSubmit={handleSubmit}>
+            <span > 아이디 : </span>
             <input name="name" value={name} placeholder="아이디" onChange={onChange} />
+            <br/>
+            <span >비밀번호 : </span>
             <input name="description" value={description} placeholder="비밀번호" onChange={onChange} />
+            <br/>
+
             <button type="submit">등록</button>
 
         </form>
