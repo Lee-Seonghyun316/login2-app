@@ -4,23 +4,23 @@ import './App.css';
 
 
 type MyFormProps = {
-    onSubmit: (form: { name: string; description: string; password:boolean}) => void;
+    onSubmit: (form: { id: string; password: string; passwordOK:boolean}) => void;
 };
 
 function MyForm({ onSubmit }: MyFormProps) {
     const [form, setForm] = useState({
-        name: '',
-        description: '',
-        password: false
+        id : '',
+        password : '',
+        passwordOK: false
     });
 
-    const { name, description, password:boolean} = form;
+    const { id, password, passwordOK:boolean} = form;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
+        const { id, value } = e.target;
         setForm({
             ...form,
-            [name]: value
+            [id]: value
         });
     };
 
@@ -30,9 +30,9 @@ function MyForm({ onSubmit }: MyFormProps) {
         e.preventDefault();
         onSubmit(form);
         setForm({
-            name: '',
-            description: '',
-            password: false
+            id: '',
+            password: '',
+            passwordOK: false
         }); // 초기화
     };
 
@@ -91,12 +91,12 @@ function MyForm({ onSubmit }: MyFormProps) {
             <hr/>
             <div>
             <span > 아이디 : </span>
-            <input name="name" value={name} placeholder="아이디를 입력하세요" onChange={onChange} />
+            <input name="id" value={id} placeholder="아이디를 입력하세요" onChange={onChange} />
             </div>
             <br/>
             <div>
             <span >비밀번호 : </span>
-            <input name="description" value={description} placeholder="비밀번호를 입력하세요" onChange={onChange} />
+            <input name="password" value={password} placeholder="비밀번호를 입력하세요" onChange={onChange} />
                 <button type="submit">등록</button>
             </div>
 

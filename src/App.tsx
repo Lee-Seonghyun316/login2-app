@@ -6,22 +6,21 @@ import LoginComplement2 from "./LoginComplement2";
 const App: React.FC = () => {
     let login = null;
     const onSubmit = (form: {
-        name: string,
-        description: string,
-        password: boolean,
+        id: string,
+        password: string,
+        passwordOK: boolean,
     }) => {
 
         //const[passwordOK, setPasswordOK] = useState(false);
-        if (form.description == "1234" && form.name !== "") {
-            form.password = true;
+        if (form.password == "1234" && form.id !== "") {
+            form.passwordOK = true;
         } else {
-            form.password = false;
+            form.passwordOK = false;
         }
-        form.password
-            ? document.write(form.name + '님 환영합니다.')//(login = <LoginComplement2  name2={form.name}/>)
+        form.passwordOK
+            ? document.write(form.id + '님 환영합니다.')//(login = <LoginComplement2  id2={form.id}/>)
             : alert("아이디를 입력하지 않았거나 비밀번호가 틀렸습니다. ");
-        // {
-        //     form.password ? document.write(form.name + '님 환영합니다.') : alert('아이디를 입력하지 않았거나 비밀번호가 틀렸습니다. ');
+
 
         //     console.log(form)}
 
